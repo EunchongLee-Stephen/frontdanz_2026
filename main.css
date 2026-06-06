@@ -1299,3 +1299,286 @@ img {
   background: var(--bg);
   padding: 54px 120px 80px;
 }
+
+/* ─── Section heading wrapper ─────────────────────────── */
+.section-heading {
+  margin-bottom: 32px;
+}
+
+/* ─── Service section (홈 페이지) ─────────────────────── */
+.service-section {
+  background: var(--white);
+  padding: 60px 120px 80px;
+}
+
+.service-grid {
+  display: flex;
+  gap: 40px;
+  margin-top: 32px;
+}
+
+.service-card {
+  background: var(--bg);
+  border-radius: 16px;
+  padding: 32px 24px;
+  flex: 1;
+}
+
+.service-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent);
+  border-radius: 8px;
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 16px;
+}
+
+.service-card h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 12px;
+}
+
+.service-card p {
+  font-size: 14px;
+  color: var(--secondary);
+  line-height: 1.6;
+}
+
+/* ─── Hot section (홈 페이지) ─────────────────────────── */
+.hot-section {
+  background: var(--bg);
+  padding: 54px 120px 80px;
+}
+
+.post-grid {
+  display: flex;
+  gap: 60px;
+  margin-top: 32px;
+}
+
+.hot-section .post-card,
+.contest-section .post-card {
+  height: auto;
+  min-height: 200px;
+}
+
+.category {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.category.yellow {
+  background: var(--accent);
+  color: var(--secondary);
+}
+
+.category.peach {
+  background: #f3d8c9;
+  color: var(--secondary);
+}
+
+.category.blue {
+  background: var(--tag-cat);
+  color: var(--secondary);
+}
+
+.post-card h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+
+.post-card > p {
+  font-size: 13px;
+  color: var(--secondary);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.post-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 14px;
+}
+
+.post-card > a {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.center-button {
+  display: flex;
+  justify-content: center;
+  margin-top: 36px;
+}
+
+.secondary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 50px;
+  border: 1px solid var(--primary);
+  border-radius: 10px;
+  background: var(--white);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+/* ─── Contest section (홈 페이지) ─────────────────────── */
+.contest-section {
+  background: var(--white);
+  padding: 54px 120px 80px;
+}
+
+.contest-heading {
+  text-align: center;
+}
+
+.contest-card {
+  height: auto;
+  padding: 0;
+  overflow: hidden;
+}
+
+.contest-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.contest-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+}
+
+.like-count {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.heart-icon {
+  color: var(--error);
+}
+
+.contest-user {
+  font-size: 12px;
+  color: var(--secondary);
+}
+
+/* ─── Notice section (홈 페이지) ─────────────────────── */
+.notice-section {
+  background: var(--bg);
+  padding: 54px 120px 80px;
+}
+
+.notice-layout {
+  display: flex;
+  gap: 40px;
+  margin-top: 32px;
+}
+
+.missing-card,
+.ad-card {
+  background: var(--white);
+  border-radius: 16px;
+  box-shadow: var(--shadow-card);
+  padding: 28px;
+  flex: 1;
+}
+
+.ad-visual {
+  width: 100%;
+  height: 180px;
+  border-radius: 12px;
+  background: var(--bg);
+  margin-bottom: 16px;
+}
+
+.missing-card h3,
+.ad-card h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 12px;
+}
+
+.missing-card ul,
+.ad-card ol {
+  padding-left: 20px;
+  font-size: 14px;
+  color: var(--secondary);
+  line-height: 1.8;
+  margin-bottom: 12px;
+}
+
+.ad-buy-btn {
+  background: var(--primary);
+  color: var(--white);
+  border: none;
+  border-radius: 10px;
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  margin-top: 8px;
+}
+
+/* ─── Footer extended layout (홈 페이지) ─────────────────── */
+.footer:has(.footer-inner) {
+  height: auto;
+  min-height: 161px;
+  overflow: visible;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-info h3 {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+
+.footer-info th,
+.footer-info td {
+  font-size: 12px;
+  color: var(--muted);
+  padding: 3px 0 3px 20px;
+  text-align: right;
+}
+
+.footer-info th {
+  font-weight: 600;
+}
