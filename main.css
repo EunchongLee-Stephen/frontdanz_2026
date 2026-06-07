@@ -112,6 +112,7 @@ img {
 }
 
 .gnb-nav a:not(.active):hover {
+    transform: scale(1.1);
   font-weight: 700;
 }
 
