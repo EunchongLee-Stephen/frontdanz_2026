@@ -110,6 +110,10 @@ img {
   color: var(--logo-orange);
 }
 
+.gnb-nav a:not(.active):hover {
+  transform: scale(1.1);
+}
+
 .gnb-btn-signup {
   background: var(--primary);
   color: var(--white) !important;
