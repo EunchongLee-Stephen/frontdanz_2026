@@ -103,7 +103,8 @@ img {
   white-space: nowrap;
   cursor: pointer;
   line-height: 1.5;
-
+  transition: transform 0.9s ease;
+  transform-origin: center;
 }
 
 .gnb-nav a.active {
@@ -112,7 +113,7 @@ img {
 }
 
 .gnb-nav a:not(.active):hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
   font-weight: 700;
 }
 
