@@ -31,7 +31,6 @@ body {
   font-family: "Pretendard Variable", "Pretendard", sans-serif;
   background-color: var(--bg);
   color: var(--primary);
-  min-width: 1440px;
 }
 
 a {
@@ -57,7 +56,8 @@ img {
 }
 
 .gnb-inner {
-  width: 1440px;
+  max-width: 1440px;
+  width: 100%;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -221,18 +221,25 @@ img {
 .tag-hamster {
   background: var(--tag-hamster);
 }
+.tag-peach {
+  background: #f3d8c9;
+}
 
 /* ─── Post card (community / home) ───────────────────── */
+a.post-card {
+  text-decoration: none;
+  color: inherit;
+}
+
 .post-card {
   background: var(--white);
   border-radius: 16px;
   box-shadow: var(--shadow-card);
-  width: 360px;
+  width: 100%;
   height: 262px;
   overflow: hidden;
   padding: 24px;
   position: relative;
-  flex-shrink: 0;
 }
 
 .post-card .tag {
@@ -375,7 +382,7 @@ img {
 .auth-page {
   min-height: 100vh;
   background: var(--bg);
-  padding-top: 64px;
+  padding: 100px 24px 48px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -385,7 +392,7 @@ img {
   background: var(--white);
   border-radius: 20px;
   box-shadow: var(--shadow-card);
-  width: 440px;
+  width: min(440px, calc(100% - 48px));
   padding: 40px;
   position: relative;
 }
@@ -497,8 +504,9 @@ img {
 }
 
 .posts-row {
-  display: flex;
-  gap: 60px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
   margin-top: 32px;
 }
 
@@ -557,9 +565,10 @@ img {
 
 /* ─── My Page ─────────────────────────────────────────── */
 .mypage-layout {
-  width: 1440px;
+  max-width: 1440px;
+  width: 100%;
   margin: 0 auto;
-  padding: 40px 234px;
+  padding: 40px clamp(24px, calc((100% - 972px) / 2), 234px);
   display: flex;
   gap: 32px;
   align-items: flex-start;
@@ -751,6 +760,13 @@ img {
   gap: 8px;
 }
 
+.meta-icon {
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
 .my-post-date {
   font-size: 12px;
   color: var(--muted);
@@ -810,9 +826,10 @@ img {
 
 /* ─── Post Detail ─────────────────────────────────────── */
 .detail-layout {
-  width: 1440px;
+  max-width: 1440px;
+  width: 100%;
   margin: 0 auto;
-  padding: 48px 320px;
+  padding: 48px clamp(24px, calc((100% - 800px) / 2), 320px);
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -1006,9 +1023,10 @@ img {
 
 /* ─── Write Post ──────────────────────────────────────── */
 .write-layout {
-  width: 1440px;
+  max-width: 1440px;
+  width: 100%;
   margin: 0 auto;
-  padding: 48px 320px;
+  padding: 48px clamp(24px, calc((100% - 800px) / 2), 320px);
 }
 
 .write-form {
@@ -1088,15 +1106,15 @@ img {
   width: 100%;
   background: var(--bg);
   border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 16px;
+  border-radius: 10px 10px 10px 10px;
+  padding: 15px 16px;
   font-size: 14px;
   font-family: inherit;
   color: var(--primary);
-  height: 320px;
-  resize: none;
-  outline: none;
   margin-bottom: 28px;
+  outline: none;
+  height: 300px;
+  resize: none;
 }
 
 .write-content-input::placeholder {
@@ -1124,8 +1142,8 @@ img {
 }
 
 .btn-write-cancel {
-  background: var(--bg);
-  border: none;
+  background: var(--white);
+  border: 1px solid var(--border);
   border-radius: 12px;
   height: 52px;
   width: 120px;
@@ -1134,6 +1152,9 @@ img {
   color: var(--primary);
   cursor: pointer;
   font-family: inherit;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .btn-write-draft {
@@ -1165,43 +1186,49 @@ img {
 
 /* ─── Hero (홈 페이지) ────────────────────────────────── */
 .hero {
-  background: var(--accent);
   height: 452px;
-  padding: 120px 120px 0;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
+  justify-content: center;
   position: relative;
   overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("assets/pet-inner.png") center/cover no-repeat;
+  z-index: 0;
 }
 
 .hero-content {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  text-align: center;
   gap: 28px;
-  width: 560px;
-}
-
-.hero-eyebrow {
-  font-size: 20px;
-  font-weight: 500;
-  color: var(--secondary);
+  max-width: 560px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
 }
 
 .hero-logo {
   height: 78px;
-  width: 300px;
+  width: min(300px, 100%);
 }
 
 .hero-logo img {
   height: 100%;
-  width: auto;
+  width: min(300px, 100%);
   display: block;
 }
 
 .hero-desc {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 400;
-  color: var(--secondary);
+  color: #ffffff;
   line-height: 1.5;
 }
 
@@ -1209,20 +1236,24 @@ img {
 .service-into {
   background: var(--white);
   padding: 60px 120px 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .service-into-title {
   font-size: 28px;
   font-weight: 700;
   color: var(--primary);
-  margin-bottom: 57px;
+  margin-bottom: 24px;
+  align-self: flex-start;
 }
 
 .service-feature {
   display: flex;
   align-items: center;
   gap: 80px;
-  margin-bottom: 157px;
+  margin-bottom: 80px;
 }
 
 .service-feature:last-child {
@@ -1262,10 +1293,13 @@ img {
   gap: 8px;
 }
 
-.service-feature-heading img {
+.service-feature-heading img,
+.service-feature-icon {
   width: 28px;
   height: 28px;
   flex-shrink: 0;
+  font-size: 24px;
+  line-height: 1;
 }
 
 .service-feature-heading-text {
@@ -1288,6 +1322,7 @@ img {
   font-weight: 400;
   color: var(--primary);
   line-height: 1.5;
+  text-align: left;
 }
 
 .service-feature.reverse .service-feature-desc {
@@ -1357,15 +1392,28 @@ img {
 }
 
 .post-grid {
-  display: flex;
-  gap: 60px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
   margin-top: 32px;
 }
 
-.hot-section .post-card,
+.hot-section .post-card {
+  height: auto;
+  min-height: 240px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.hot-section .post-card .post-card-footer {
+  position: static;
+  margin-top: auto;
+  align-self: stretch;
+}
+
 .contest-section .post-card {
   height: auto;
-  min-height: 200px;
 }
 
 .category {
@@ -1450,7 +1498,7 @@ img {
 }
 
 .contest-heading {
-  text-align: center;
+  text-align: left;
 }
 
 .contest-card {
@@ -1459,7 +1507,7 @@ img {
   overflow: hidden;
 }
 
-.contest-card img {
+.contest-card img:not(.heart-icon) {
   width: 100%;
   height: 220px;
   object-fit: cover;
@@ -1480,6 +1528,10 @@ img {
 
 .heart-icon {
   color: var(--error);
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .contest-user {
@@ -1514,6 +1566,7 @@ img {
   border-radius: 12px;
   background: var(--bg);
   margin-bottom: 16px;
+  object-fit: cover;
 }
 
 .missing-card h3,
@@ -1581,4 +1634,185 @@ img {
 
 .footer-info th {
   font-weight: 600;
+}
+
+/* ═══════════════════════════════════════════════════════
+   반응형 — 900px
+═══════════════════════════════════════════════════════ */
+@media (max-width: 900px) {
+  /* ─── GNB ──────────────────────────────────────────── */
+  .gnb-inner {
+    padding: 0 24px;
+  }
+  .gnb-nav {
+    gap: 4px;
+  }
+  .gnb-nav a,
+  .gnb-nav span {
+    font-size: 14px;
+    padding: 6px 8px;
+  }
+  .gnb-btn-signup {
+    width: auto;
+    padding: 6px 14px !important;
+  }
+
+  /* ─── 공통 post-card: 고정 높이/overflow 해제 ────────── */
+  .post-card {
+    width: 100%;
+    max-width: 560px;
+    height: auto;
+    overflow: visible;
+  }
+
+  /* post-card-footer 내 좌측 div이 flex: 1을 가져
+     divider가 전체 너비를 채우도록 */
+  .post-card-footer > div:first-child {
+    flex: 1;
+  }
+
+  /* ─── Community 페이지 ─────────────────────────────── */
+  .page-header {
+    padding: 28px 24px;
+    height: auto;
+  }
+
+  .community-section {
+    padding: 40px 24px;
+  }
+
+  /* posts-row: 3열 → 1열 */
+  .posts-row {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  /* community 카드: flex column + static footer */
+  .community-section .post-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .community-section .post-card .post-card-footer {
+    position: static;
+    margin-top: auto;
+    align-self: stretch;
+  }
+
+  /* ─── Hero ─────────────────────────────────────────── */
+  .hero {
+    height: auto;
+    min-height: 240px;
+    padding: 48px 24px;
+  }
+  .hero-content {
+    width: 100%;
+    gap: 16px;
+  }
+  .hero-logo {
+    width: 200px;
+    height: 52px;
+  }
+  .hero-logo img {
+    width: 200px;
+  }
+  .hero-desc {
+    font-size: 16px;
+  }
+
+  /* ─── Service 섹션 (왜 PET35인가?) ─────────────────── */
+  .service-into {
+    padding: 48px 24px 56px;
+  }
+
+  .service-feature,
+  .service-feature.reverse {
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    margin-bottom: 56px;
+  }
+
+  .service-feature-img {
+    width: 100%;
+    max-width: 577px;
+    height: 220px;
+  }
+
+  .service-feature-body {
+    width: 100%;
+    max-width: 577px;
+    gap: 20px;
+  }
+
+  .service-feature.reverse .service-feature-heading {
+    justify-content: flex-start;
+  }
+  .service-feature.reverse .service-feature-heading-text,
+  .service-feature.reverse .service-feature-desc {
+    text-align: left;
+  }
+
+  /* ─── HOT 게시글 ────────────────────────────────────── */
+  .hot-section {
+    padding: 40px 24px 56px;
+  }
+
+  .post-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .hot-section .post-card {
+    min-height: unset;
+  }
+
+  /* ─── 펫 사진 콘테스트 ──────────────────────────────── */
+  .contest-section {
+    padding: 40px 24px 56px;
+  }
+
+  /* contest-card는 overflow: hidden 유지 */
+  .contest-card {
+    overflow: hidden;
+  }
+
+  /* ─── 놓치면 아쉬운 소식 ────────────────────────────── */
+  .notice-section {
+    padding: 40px 24px 56px;
+  }
+
+  .notice-layout {
+    flex-direction: column;
+  }
+
+  /* ─── My Page ──────────────────────────────────────── */
+  .mypage-layout {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 24px;
+  }
+
+  .sidebar {
+    width: 100%;
+    min-height: auto;
+  }
+
+  /* ─── Post Detail / Write ───────────────────────────── */
+  .detail-layout,
+  .write-layout {
+    padding: 32px 20px;
+  }
+
+  /* ─── Footer ────────────────────────────────────────── */
+  .footer {
+    padding: 32px 24px;
+    height: auto;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    gap: 20px;
+  }
 }
