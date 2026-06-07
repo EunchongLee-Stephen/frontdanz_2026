@@ -103,6 +103,8 @@ img {
   white-space: nowrap;
   cursor: pointer;
   line-height: 1.5;
+  transition: transform 0.18s ease;
+transform-origin: center;
 }
 
 .gnb-nav a.active {
