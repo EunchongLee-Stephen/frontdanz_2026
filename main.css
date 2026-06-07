@@ -103,7 +103,7 @@ img {
   white-space: nowrap;
   cursor: pointer;
   line-height: 1.5;
-  transition: transform 0.1s ease;
+  transition: transform 0.09s ease;
 transform-origin: center;
 }
 
@@ -113,7 +113,7 @@ transform-origin: center;
 }
 
 .gnb-nav a:not(.active):hover {
-  transform: scale(1.1);
+  font-weight: 700;
 }
 
 .gnb-btn-signup {
